@@ -21,7 +21,7 @@ services:
       MYSQL_DATABASE: exampledb
       MYSQL_USER: exampleuser
       MYSQL_PASSWORD: examplepass
-      MYSQL_RANDOM_ROOT_PASSWORD: 'password'
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - db:/var/lib/mysql
   phpmyadmin:
@@ -34,7 +34,7 @@ services:
       - 8888:88
     environment:
       PMA_HOST: mysql
-      MYSQL_RANDOM_ROOT_PASSWORD: 'password'
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
 volumes:
   wordpress:
   db:
