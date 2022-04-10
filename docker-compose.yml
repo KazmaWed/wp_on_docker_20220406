@@ -10,7 +10,7 @@ services:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_USER: user
       WORDPRESS_DB_PASSWORD: pass
-      WORDPRESS_DB_NAME: db
+      WORDPRESS_DB_NAME: mysql
     volumes:
       - wordpress:/var/www/html
   mysql:
@@ -18,7 +18,7 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_DATABASE: db
+      MYSQL_DATABASE: mysql
       MYSQL_USER: user
       MYSQL_PASSWORD: pass
       MYSQL_RANDOM_ROOT_PASSWORD: pass
