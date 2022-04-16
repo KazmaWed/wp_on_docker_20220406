@@ -9,8 +9,8 @@ services:
     environment:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_USER: user
-      WORDPRESS_DB_PASSWORD: pass
-      WORDPRESS_DB_NAME: db
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: mysql
     volumes:
       - wordpress:/var/www/html
   mysql:
@@ -18,28 +18,12 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_DATABASE: db
+      MYSQL_DATABASE: mysql
       MYSQL_USER: user
-      MYSQL_PASSWORD: pass
-      MYSQL_RANDOM_ROOT_PASSWORD: pass
+      MYSQL_PASSWORD: password
+      MYSQL_RANDOM_ROOT_PASSWORD: password
     volumes:
       - mysql:/var/lib/mysql
-  phpmyadmin:
-    container_name: phpmyadmin
-    depends_on:
-      - mysql
-    image: phpmyadmin/phpmyadmin
-    restart: always
-    ports:
-      - 8888:88
-    environment:
-      PMA_ARBITRARY: 1
-      PMA_HOST: mysql
-      PMA_USER: root
-      PMA_PASSWORD: pass
-      MYSQL_RANDOM_ROOT_PASSWORD: pass
-    volumes:
-      - ./phpmyadmin/sessions:/sessions
 volumes:
   wordpress:
   mysql:
