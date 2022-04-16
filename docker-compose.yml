@@ -40,12 +40,12 @@ services:
       PMA_PASSWORD: password
     volumes:
       - ./phpmyadmin/sessions:/sessions
-  php:
-    build: ./phpmyadmin
-    volumes:
-      - ./php/src:/var/www/html
-    container_name: php
-    tty: true
+  # php:
+  #   build: ./phpmyadmin
+  #   volumes:
+  #     - ./php/src:/var/www/html
+  #   container_name: php
+  #   tty: true
 volumes:
   wordpress:
   mysql:
