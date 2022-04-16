@@ -34,7 +34,7 @@ services:
     depends_on:
       - mysql
     ports:
-      - 10080:80
+      - 10080:10080
     environment:
       PMA_ARBITRARY: 1
       PMA_PORT: 3306
