@@ -41,7 +41,7 @@ services:
     volumes:
       - ./phpmyadmin/sessions:/sessions
   php:
-    build: ./Phpmyadminfile
+    build: ./phpmyadmin
     volumes:
       - ./php/src:/var/www/html
     container_name: php
